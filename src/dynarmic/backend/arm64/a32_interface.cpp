@@ -118,6 +118,10 @@ struct Jit::Impl final {
         current_state.SetFpscr(value);
     }
 
+    void SetProcessorId(size_t id) {
+        conf.processor_id = id;
+    }
+
     void ClearExclusiveState() {
         current_state.exclusive_state = false;
     }
@@ -226,6 +230,10 @@ std::uint32_t Jit::Fpscr() const {
 
 void Jit::SetFpscr(std::uint32_t value) {
     impl->SetFpscr(value);
+}
+
+void Jit::SetProcessorId(size_t id) {
+    impl->SetProcessorId(id);
 }
 
 void Jit::ClearExclusiveState() {

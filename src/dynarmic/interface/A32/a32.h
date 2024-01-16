@@ -78,6 +78,9 @@ public:
     std::uint32_t Fpscr() const;
     void SetFpscr(std::uint32_t value);
 
+    /// Update the processor ID for this core.
+    void SetProcessorId(size_t id);
+
     /// Clears exclusive state for this core.
     void ClearExclusiveState();
 
